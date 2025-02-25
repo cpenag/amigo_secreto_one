@@ -28,3 +28,22 @@ function actualizarLista() {
     }
 }
 
+// sortear un amigo secreto
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("Debe agrega al menos un nombre antes de sortear.");
+        return;
+    }
+
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceAleatorio];
+
+    document.getElementById("resultado").innerHTML = `Tu Amigo Secreto es: <strong>${amigoSorteado}</strong> `;
+}
+
+// Reiniciar el juego
+function reiniciarJuego() {
+    amigos = []; // Vaciar lista
+    document.getElementById("listaAmigos").innerHTML = ""; // Limpiar la lista en la página
+    document.getElementById("resultado").innerHTML = ""; // Borrar el resultado del sorteo
+}
